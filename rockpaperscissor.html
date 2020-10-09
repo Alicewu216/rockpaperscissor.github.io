@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>RockPaperScissor</title>
+    </head>
+
+    <body>
+
+        <script>
+            //get user's response
+            var winScore = 0;
+            var tightScore = 0;
+            var loseScore = 0;
+            
+            alert("You gain one point if you win; no point if you lose or are tight with the computer");
+            alert("Now let's begin!");
+            for (var i = 0; i < 10; i++) {
+                var userAns = prompt("please choose among 'Rock', 'Paper', and 'Scissor'");
+            
+
+                //generating computer random response
+
+                var comAsAr = ["Rock", "Paper", "Scissor"];
+                var ranNum = Math.floor(Math.random()*3);
+                console.log (ranNum);
+                var ComputerAns = comAsAr[ranNum];
+
+                // Display in console
+                alert("The computer chooses " + ComputerAns);
+                if ((userAns === "Rock") && (ComputerAns === "Paper")) {
+                    alert("The computer wins");
+                    loseScore = loseScore + 1;
+                    alert("You have lost " + loseScore + " times");
+                }
+                else if ((userAns === "Rock") && (ComputerAns === "Scissor")) {
+                    alert("You win");
+                    winScore = winScore + 1;
+                    alert("You have won " + winScore + " times");
+                }
+                else if ((userAns === "Paper") && (ComputerAns === "Scissor")) {
+                    alert("The computer wins");
+                    loseScore = loseScore + 1;
+                    alert("You have lost " + loseScore + " times");
+                }
+                else if ((userAns === "Paper") && (ComputerAns === "Rock")) {
+                    alert("You win");
+                    winScore = winScore + 1;
+                    alert("You have won " + winScore + " times");
+                }
+                else if ((userAns === "Scissor") && (ComputerAns === "Rock")) {
+                    alert("The computer wins");
+                    loseScore = loseScore + 1;
+                    alert("You have lost " + loseScore + " times");
+                }
+                else if ((userAns === "Scissor") && (ComputerAns === "Paper")) {
+                    alert("You win");
+                    winScore = winScore + 1;
+                    alert("You have won " + winScore + " times");
+                }
+                else {
+                    alert("You are tight");
+                    tightScore = tightScore + 1;
+                    alert("You have tighted " + tightScore + " times");
+                }
+            }
+            alert("your total score is " + winScore);
+            
+        </script>
+    </body>
+
+</html>
